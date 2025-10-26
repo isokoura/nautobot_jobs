@@ -1,4 +1,5 @@
-from nautobot.extras.jobs import Job, StringVar, register_jobs
+from nautobot.extras.jobs import StringVar
+from nautobot.apps.jobs import Job, register_jobs
 import subprocess
 
 class TestDeviceAccess(Job):
