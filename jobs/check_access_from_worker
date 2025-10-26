@@ -14,3 +14,4 @@ class TestDeviceAccess(Job):
             self.log_info(f"✅ Device {ip} is reachable from worker.")
         else:
             self.log_failure(f"❌ Device {ip} not reachable. Output:\n{result.stderr}")
+register_jobs(TestDeviceAccess)
