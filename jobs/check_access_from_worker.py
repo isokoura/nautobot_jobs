@@ -4,15 +4,6 @@ import subprocess
 
 from nautobot.apps.jobs import Job, register_jobs
 
-class SyncDevices(Job):
-    class Meta:
-        name = "Sync Devices from CMDB"
-
-    def run(self):
-        self.logger.info("Running external sync...")
-
-register_jobs(SyncDevices)
-'''
 class TestDeviceAccess(Job):
     device_ip = StringVar(description="Device IP to test")
 
@@ -27,4 +18,3 @@ class TestDeviceAccess(Job):
         else:
             self.log_failure(f"Device {ip} not reachable. Output:\n{result.stderr}")
 register_jobs(TestDeviceAccess)
-'''
