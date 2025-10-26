@@ -11,7 +11,7 @@ class TestDeviceAccess(Job):
         name = "Test Device Access"
 
     def run(self, device_ip):
-        self.logger.info(message=f"{device_ip}")
+        self.logger.info(f"{device_ip}")
         ip = device_ip
         result = subprocess.run(["ping", "-c", "3", ip], capture_output=True, text=True)
         if result.returncode == 0:
