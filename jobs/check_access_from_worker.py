@@ -10,7 +10,7 @@ class TestDeviceAccess(Job):
     class Meta:
         name = "Test Device Access"
 
-    def run(self, device_ip, commit):
+    def run(self, device_ip):
         self.log(message=f"{device_ip}")
         ip = device_ip
         result = subprocess.run(["ping", "-c", "3", ip], capture_output=True, text=True)
