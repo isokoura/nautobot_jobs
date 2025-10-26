@@ -11,8 +11,8 @@ class TestDeviceAccess(Job):
         name = "Test Device Access"
 
     def run(self, data, commit):
-        self.log(message=f"{data}")
-        ip = data["device_ip"]
+        self.log(message=f"{device_ip}")
+        ip = device_ip
         result = subprocess.run(["ping", "-c", "3", ip], capture_output=True, text=True)
         if result.returncode == 0:
             self.log_info(f"Device {ip} is reachable from worker.")
